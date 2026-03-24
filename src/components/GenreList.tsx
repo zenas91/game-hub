@@ -13,7 +13,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
   if (error) return null;
 
   return (
-    <List.Root>
+    <List.Root listStyle="none">
       {data.map((genre) => (
         <List.Item key={genre.id} paddingY="5px">
           <HStack>
