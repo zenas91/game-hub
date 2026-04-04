@@ -1,8 +1,26 @@
 import axios from "axios";
 
-export default axios.create({
+interface FetchResponse<T> {
+  count: number;
+  results: T[];
+}
+
+const axiosInstance = axios.create({
   baseURL: import.meta.env.VITE_RAWG_BASEURL,
   params: {
     key: import.meta.env.VITE_RAWG_API_KEY,
   },
 });
+
+class APIClient<T> {
+  constructor(public endpoint: string) {}
+
+  getAll = () => {
+    return axiosInstance
+      .get<FetchResponse<T>>(this.endpoint)
+      .then((res) => res.data.results);
+  };
+}
+
+export { APIClient };
+export default axiosInstance;
