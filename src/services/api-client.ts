@@ -15,9 +15,9 @@ const axiosInstance = axios.create({
 class APIClient<T> {
   constructor(public endpoint: string) {}
 
-  getAll = () => {
+  getAll = (params?: object) => {
     return axiosInstance
-      .get<FetchResponse<T>>(this.endpoint)
+      .get<FetchResponse<T>>(this.endpoint, { params })
       .then((res) => res.data.results);
   };
 }
