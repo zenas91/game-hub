@@ -1,4 +1,4 @@
-import { APIClient } from "./api-client";
+import APIClient from "./api-client";
 
 export interface Platform {
   id: number;

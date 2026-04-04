@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosRequestConfig } from "axios";
 
 interface FetchResponse<T> {
   count: number;
@@ -15,12 +15,11 @@ const axiosInstance = axios.create({
 class APIClient<T> {
   constructor(public endpoint: string) {}
 
-  getAll = (params?: object) => {
+  getAll = (config?: AxiosRequestConfig) => {
     return axiosInstance
-      .get<FetchResponse<T>>(this.endpoint, { params })
+      .get<FetchResponse<T>>(this.endpoint, config)
       .then((res) => res.data.results);
   };
 }
 
-export { APIClient };
-export default axiosInstance;
+export default APIClient;
