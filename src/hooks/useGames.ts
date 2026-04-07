@@ -1,9 +1,9 @@
-import { GameQuery } from "@/App";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { CACHE_KEY_GAMES } from "@/constants";
 import gameService from "@/services/game-service";
 import { FetchResponse } from "@/services/api-client";
 import ms from "ms";
+import useGameQueryStore from "@/store";
 
 export interface Platform {
   id: number;
@@ -19,7 +19,8 @@ export interface Game {
   rating_top: number;
 }
 
-const useGames = (gameQuery: GameQuery) => {
+const useGames = () => {
+  const gameQuery = useGameQueryStore((s) => s.gameQuery);
   return useInfiniteQuery<FetchResponse<Game>, Error>({
     queryKey: [CACHE_KEY_GAMES, gameQuery],
     queryFn: ({ pageParam = 1 }) =>
