@@ -13,6 +13,7 @@ export interface Platform {
 export interface Game {
   id: number;
   name: string;
+  slug: string;
   background_image: string;
   parent_platforms: { platform: Platform }[];
   metacritic: number;
@@ -33,7 +34,7 @@ const useGames = () => {
           page: pageParam,
         },
       }),
-    keepPreviousData: true,
+    keepPreviousData: false,
     staleTime: ms("24h"),
     getNextPageParam: (lastPage, allPages) => {
       return lastPage.next ? allPages.length + 1 : undefined;

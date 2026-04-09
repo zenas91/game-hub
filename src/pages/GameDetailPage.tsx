@@ -1,7 +1,14 @@
-import React from "react";
+import useGameDetail from "@/hooks/useGameDetail";
+import { Heading, Text } from "@chakra-ui/react";
 
 const GameDetailPage = () => {
-  return <div>GameDetailPage</div>;
+  const { data: game, error } = useGameDetail();
+  return (
+    <>
+      <Heading>{game?.name}</Heading>
+      <Text>{game?.description_raw}</Text>
+    </>
+  );
 };
 
 export default GameDetailPage;
