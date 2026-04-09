@@ -1,5 +1,3 @@
-import APIClient from "./api-client";
-
 export interface GameDetail {
   id: number;
   name: string;
@@ -10,5 +8,3 @@ export interface GameDetail {
   background_image: string;
   metacritic: number;
 }
-
-export default new APIClient<GameDetail>("/games/");
