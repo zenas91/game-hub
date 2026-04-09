@@ -9,17 +9,14 @@ interface GameQuery {
 
 interface GameQueryStore {
   gameQuery: GameQuery;
-  slug: string;
   setGenreId: (genreId: number) => void;
   setPlatformId: (platformId: number) => void;
   setSortOrder: (sortOrder: string) => void;
   setSearchText: (searchText: string) => void;
-  setSlug: (slug: string) => void;
 }
 
 const useGameQueryStore = create<GameQueryStore>((set) => ({
   gameQuery: {},
-  slug: "",
   setGenreId: (genreId) =>
     set((store) => ({ gameQuery: { ...store.gameQuery, genreId } })),
   setPlatformId: (platformId) =>
@@ -27,7 +24,6 @@ const useGameQueryStore = create<GameQueryStore>((set) => ({
   setSortOrder: (sortOrder) =>
     set((store) => ({ gameQuery: { ...store.gameQuery, sortOrder } })),
   setSearchText: (searchText) => set(() => ({ gameQuery: { searchText } })),
-  setSlug: (slug) => set(() => ({ slug })),
 }));
 
 export default useGameQueryStore;

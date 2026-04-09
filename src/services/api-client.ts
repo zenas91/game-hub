@@ -22,8 +22,8 @@ class APIClient<T> {
       .then((res) => res.data);
   };
 
-  getDetail = (slug: string) => {
-    return axiosInstance.get<T>(this.endpoint + slug).then((res) => res.data);
+  get = (id: number | string) => {
+    return axiosInstance.get<T>(this.endpoint + id).then((res) => res.data);
   };
 }
 
