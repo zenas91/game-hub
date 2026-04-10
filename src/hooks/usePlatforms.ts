@@ -1,4 +1,4 @@
-import { Platform } from "../entities/Platform";
+import Platform from "../entities/Platform";
 import { CACHE_KEY_PLATFORM } from "@/constants";
 import { useQuery } from "@tanstack/react-query";
 import platforms from "@/data/platforms";
