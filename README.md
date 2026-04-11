@@ -1,7 +1,14 @@
 # Game Hub 🚀
 This repository features a modern, responsive web application for discovering video games, built using React, TypeScript, and Chakra UI, featuring RAWG API integration. The application provides filtering by platform and genre, real-time search functionality, and a dark mode interface. View the project repository on GitHub.
 
+**🔗 [Live Demo on Vercel](https://game-hub-eight-ashy.vercel.app/))**
+
+---
+
+### 🎥 Preview
 [Project Demo - Game Hub](https://github.com/user-attachments/assets/54637b51-1ad4-4f7f-ae62-b8a9145f1716)
+
+---
 
 ## 🚀 Key Features
 
@@ -13,6 +20,15 @@ This repository features a modern, responsive web application for discovering vi
 *   **🎮 Smart Filtering & Sorting** – Refine the game library by **Genre**, **Platform**, or **Popularity** to find exactly what you're looking for.
 *   **🎭 Professional UX/UI** – Includes **Skeleton Screens** to eliminate layout shift and provide a smooth "perceived" loading speed.
 *   **📱 Fully Responsive** – A mobile-first design that adapts flawlessly to any screen size.
+
+---
+## 🛠️ Tech Stack
+
+*   **Frontend:** React 18, TypeScript, Vite
+*   **UI Library:** Chakra UI (Responsive Design & Dark Mode)
+*   **State Management:** Zustand (Client State) & React Query (Server State)
+*   **Data Source:** RAWG API
+*   **Icons:** React Icons
 
 ## 🛠️ Technical Highlights
 
@@ -27,3 +43,5 @@ I opted for a dual-layered approach to state management to ensure maximum perfor
 
 ### 🎨 UI & UX with Chakra UI
 The interface was built using **Chakra UI** to leverage its robust layout system. By using its built-in `ColorMode` functionality, I was able to implement a persistent Dark/Light mode toggle with minimal CSS, ensuring the app feels native to the user's system preferences.
+
+---
